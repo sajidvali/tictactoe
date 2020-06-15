@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root {
+    font-size: 16px;
+    --clr-background: rgb(36, 166, 206);
+    --clr-gap: rgba(13, 115, 146, 0.925);
+    --clr-x: #545454;
+    --clr-o: #f2ecd0;
+    --fs-cell: 5rem;
+    --fs-body: 1.5rem;
+    --cell-len: 5rem;
+    --ff-primary: 'Balsamiq Sans', cursive;
+    --ff-secondary: monospace;
+}
+
+@media (min-width: 400px) {
+    :root {
+        --fs-cell: 5rem;
+        --fs-body: 1.5rem;
+        --cell-len: 8rem;
+    }
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--clr-background);
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+.mainGrid{
+    display: grid;
+    background: var(--clr-gap);
+    grid-template-columns: repeat(3, var(--cell-len));
+    grid-gap: 8px;
+    text-align: center;
+}
+
+.cell{
+    display: flex;
+    background-color: var(--clr-background);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-cell);
+    width: var(--cell-len);
+    height: var(--cell-len);
+    justify-content: center;
+    text-align: center;
+}
+.message{
+    font-family: var(--ff-secondary);
+    font-size: 3rem;
+    font-weight: bold;
+}
+.score{
+    font-family: var(--ff-primary);
+}
+.x { color: var(--clr-x); }
+.o { color: var(--clr-o); }
+.disabled { pointer-events: none; }
+.btn {
+    background: var(--clr-gap);
+    border: 1px solid var(--clr-x);
+    padding: 1em 2em;
+}
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.2em 1em 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-0.25em);
+    transition: transform 150ms;
+}
